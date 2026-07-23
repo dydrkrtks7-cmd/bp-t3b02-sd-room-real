@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신촌 가라오케 탐색 지도 - 상세 정보</title>
+    <meta name="description" content="신촌 가라오케 업체들의 상세 정보를 지역 특성과 함께 분석합니다. 음향 시스템, 접근성, 분위기 등을 지역 신호와 연결하여 설명합니다.">
+    <meta name="keywords" content="신촌 가라오케, 상세 정보, 지역 분석, 음향 시스템, 접근성, 가라오케 분위기">
+    <link rel="canonical" href="https://sinchon-karaoke-note.mens-esthe.space/information">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="신촌 가라오케 탐색 지도 — 상세 정보">
+    <meta property="og:description" content="신촌의 각 가라오케를 지역 맥락 속에서 상세히 파헤칩니다. 소리와 공간, 접근성을 통해 최적의 선택을 발견하세요.">
+    <meta property="og:url" content="https://sinchon-karaoke-note.mens-esthe.space/information">
+    <meta property="og:site_name" content="신촌 가라오케 노트">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-primary: #1a1a2e;
+            --c-secondary: #16213e;
+            --c-accent: #e94560;
+            --c-bg: #f8f9fa;
+            --c-text: #2d3436;
+            --c-text-light: #636e72;
+            --c-border: #dee2e6;
+            --c-white: #ffffff;
+            --c-card: #ffffff;
+            --f-sans: 'Noto Sans KR', sans-serif;
+            --f-head: 'Barlow Condensed', sans-serif;
+            --b-radius: 8px;
+            --b-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --p-max: 1200px;
+            --p-padding: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--f-sans);
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--f-head);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--c-accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #c81e45;
+        }
+
+        .m-list-ojxz {
+            max-width: var(--p-max);
+            margin: 0 auto;
+            padding: var(--p-padding);
+        }
+
+        .n-top-9flm {
+            background: var(--c-primary);
+            color: var(--c-white);
+            padding: 1.5rem var(--p-padding);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--b-shadow);
+        }
+
+        .nav-container {
+            max-width: var(--p-max);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--c-white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--c-white);
+        }
+
+        .r-txt-k4yl {
+            padding: 3rem 0 4rem;
+        }
+
+        .r-txt-k4yl a {
+            color: var(--c-accent);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .r-txt-k4yl h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--c-primary);
+        }
+
+        .r-txt-k4yl .subtitle {
+            font-size: 1.25rem;
+            color: var(--c-text-light);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--c-white);
+            border-radius: var(--b-radius);
+            box-shadow: var(--b-shadow);
+            padding: 2rem;
+            border: 1px solid var(--c-border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .info-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--c-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card p {
+            color: var(--c-text-light);
+            margin-bottom: 1.25rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--c-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--c-bg);
+            color: var(--c-accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--c-accent);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin: 4rem 0 2rem;
+            color: var(--c-primary);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--c-accent);
+            border-radius: 2px;
+        }
+
+        .region-highlight {
+            background: var(--c-secondary);
+            color: var(--c-white);
+            padding: 3rem;
+            border-radius: var(--b-radius);
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .region-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--c-accent);
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .region-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .region-highlight p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tip-item {
+            background: var(--c-white);
+            padding: 1.5rem;
+            border-radius: var(--b-radius);
+            border-left: 4px solid var(--c-accent);
+        }
+
+        .tip-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--c-primary);
+        }
+
+        footer {
+            background: var(--c-primary);
+            color: var(--c-white);
+            padding: 3rem var(--p-padding) 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: var(--p-max);
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--c-primary);
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 1rem var(--p-padding);
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-links a {
+                display: block;
+                width: 100%;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .r-txt-k4yl h1 {
+                font-size: 2.25rem;
+            }
+
+            .region-highlight {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="n-top-9flm">
+        <div class="nav-container">
+            <div class="nav-logo">신촌가라오케노트</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="https://sinchon-karaoke-note.mens-esthe.space">홈</a></li>
+                <li><a href="https://sinchon-karaoke-note.mens-esthe.space/information">정보</a></li>
+                <li><a href="https://sinchon-karaoke-note.mens-esthe.space/comparison">비교</a></li>
+                <li><a href="https://sinchon-karaoke-note.mens-esthe.space/tips">팁</a></li>
+            </ul>
+            <button class="hamburger-menu" id="menuToggle">☰</button>
+        </div>
+    </nav>
+
+    <main class="m-list-ojxz">
+        <section class="r-txt-k4yl">
+            <h1>신촌 가라오케 탐색 지도</h1>
+            <p class="subtitle">각 업체의 상세 정보를 지역적 맥락과 함께 살펴봅니다. 소리와 공간, 접근성, 분위기까지, 신촌이라는 지역 신호가 담긴 실질적인 안내서입니다.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🔊 음향 시스템 심층 해부</h3>
+                    <p>신촌의 가라오케들은 주로 학생과 젊은 층을 겨냥해 비용 대비 성능이 뛰어난 장비를 갖추고 있습니다.</p>
+                    <ul>
+                        <li>
+                            <span>표준 사운드 시스템</span>
+                            <span class="tag">대부분의 업체</span>
+                        </li>
+                        <li>
+                            <span>고해상도 마이크 & 모니터</span>
+                            <span class="tag">일부 프리미엄 업체</span>
+                        </li>
+                        <li>
+                            <span>맞춤형 EQ 조절 가능</span>
+                            <span class="tag">방문객 평가 높음</span>
+                        </li>
+                        <li>
+                            <span>노래방 앱 연동 시스템</span>
+                            <span class="tag">최신 트렌드</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📍 위치 및 접근성</h3>
+                    <p>신촌역을 중심으로 한 지리적 특성이 접근성을 결정합니다. 도보 5분 이내 업체들이 가장 높은 선호도를 보입니다.</p>
+                    <ul>
+                        <li>
+                            <span>신촌역 1번 출구 도보 3분</span>
+                            <span class="tag">최대 밀집 지역</span>
+                        </li>
+                        <li>
+                            <span>이대역과의 중간 지점</span>
+                            <span class="tag">상대적으로 조용</span>
+                        </li>
+                        <li>
+                            <span>주변 상권 내 위치</span>
+                            <span class="tag">식사와 연계 용이</span>
+                        </li>
+                        <li>
+                            <span>야간 개별 간판 조명</span>
+                            <span class="tag">야간 시인성 확보</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🌙 분위기 및 테마</h3>
+                    <p>신촌 지역의 특성상 개방적이고 캐주얼한 분위기의 업체가 많습니다. 세련된 인테리어부터 레트로 감성까지 다양합니다.</p>
+                    <ul>
+                        <li>
+                            <span>모던 & 미니멀 인테리어</span>
+                            <span class="tag">신규 업체 추세</span>
+                        </li>
+                        <li>
+                            <span>파티룸 & 단체 공간</span>
+                            <span class="tag">MT, 동아리 모임 인기</span>
+                        </li>
+                        <li>
+                            <span>프라이빗 부스</span>
+                            <span class="tag">소규모 모임 선호</span>
+                        </li>
+                        <li>
+                            <span>24시간 운영 업체</span>
+                            <span class="tag">심야 시간대 활발</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="section-title">지역 특성으로 읽는 가라오케 문화</h2>
+
+            <div class="region-highlight">
+                <h3>신촌은 "노래방 생태계"입니다</h3>
+                <p>신촌은 단순히 가라오케가 많은 곳이 아닙니다. 대학가 특성상 시즌별로 다른面孔을 보여요. 개강 초에는 신입생 환영회, 중간고사 기간에는 해방감을 즐기는 학생들, 연말에는 MT 단체방문이 이어집니다. 이 동적인 흐름 속에서 업체들은 음향 시설을 꾸준히 업그레이드하고, 가격 정책을 유연하게 조정하며 살아남습니다. 그래서 신촌의 가라오케는 '항상 새로운 상태'라고 할 수 있죠.</p>
+            </div>
+
+            <h2 class="section-title">실용적 참고사항</h2>
+
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h4>🔑 예약 활용법</h4>
+                    <p>주말 저녁高峰 시간대(8시~11시)에는 예약이 필수입니다. 대부분의 업체가 전화 또는 카카오톡 채널로 예약을 받으며, 일부는 실시간 예약 시스템을 도입했습니다.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>💰 가격 구조 이해하기</h4>
+                    <p>신촌 가라오케들은 1시간 단위 과금이 일반적입니다. 추가 30분 단위로 요금이 붙는 곳이 많으니, 시간 계획을 철저히 하는 것이 비용 절약의 핵심입니다.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🎵 곡 업데이트 주기</h4>
+                    <p>인기 차트곡은 보통 1~2주 내에 반영됩니다. 최신곡 의존도가 높다면, 업체별 곡 업데이트 주기를 미리 확인하는 것이 좋습니다.</p>
+                </div>
+                <div class="tip-item">
+                    <h4>👥 인원별 최적 공간</h4>
+                    <p>2~3명이면 일반 부스, 4명 이상이면 파티룸을 추천합니다. 인원수에 비해 작은 공간은 음향 품질과 편의성을 크게 떨어뜨립니다.</p>
+                </div>
+            </div>
+
+            <div class="region-highlight" style="background: var(--c-bg); color: var(--c-text); border: 1px solid var(--c-border);">
+                <h3 style="color: var(--c-primary);">💡 신촌 주민(?)의 조언</h3>
+                <p style="color: var(--c-text-light);">가장 좋은 방법은 직접 가보는 것이죠. 처음엔 주요 대로변 업체부터, 그 다음 골목 안쪽의 숨은 공간까지 탐험해 보세요. 신촌의 매력은 그 다양성에 있습니다. 음향 시설도 중요하지만, 그 공간에서의 경험과 분위기가 최종 만족도를 결정하니까요. 오늘 밤, 신촌의 밤거리에서 나만의 '보컬 룸'을 찾아보는 건 어떨까요?</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://sinchon-karaoke-note.mens-esthe.space">홈</a>
+                <a href="https://sinchon-karaoke-note.mens-esthe.space/information">정보</a>
+                <a href="https://sinchon-karaoke-note.mens-esthe.space/comparison">비교</a>
+                <a href="https://sinchon-karaoke-note.mens-esthe.space/tips">팁</a>
+            </div>
+            <p class="copyright">© 2024 신촌가라오케노트. 모든 정보는 참고용이며, 최신 업데이트는 각 업체에 직접 확인하시기 바랍니다.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
